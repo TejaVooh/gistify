@@ -1,54 +1,40 @@
-# React + TypeScript + Vite
+# Gistify
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Gistify is a simple app that takes an accessible link to a video, image, reel, or post — and returns a clean summary (or gist) of the content.
 
-Currently, two official plugins are available:
+Built for clarity, speed, and minimalism.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Version 1 Features
 
-## Expanding the ESLint configuration
+- Paste any public link (YouTube, Instagram reel, tweet, blog post, etc.)
+- Click **Gistify** to get:
+  - About – What it's about
+  - Gist – The essence
+  - Related To – Topics, people, or domains
+- Output shown on screen with a copy option (no data saved)
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+## Tech Stack
 
-```js
-export default tseslint.config({
-  extends: [
-    // Remove ...tseslint.configs.recommended and replace with this
-    ...tseslint.configs.recommendedTypeChecked,
-    // Alternatively, use this for stricter rules
-    ...tseslint.configs.strictTypeChecked,
-    // Optionally, add this for stylistic rules
-    ...tseslint.configs.stylisticTypeChecked,
-  ],
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
-```
+- Frontend: React + Vite + TailwindCSS (TypeScript)
+- LLM: OpenAI / Local LLMs (e.g., LLaMA / Ollama)  
+- Deploy: GitHub Pages (planned)
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+## Coming Soon
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+- Sentiment-based sections like:
+  - Useful
+  - Debatable
+  - Not Useful
+- Rate-limiting alerts for free LLM usage
+- Save/share functionality
 
-export default tseslint.config({
-  plugins: {
-    // Add the react-x and react-dom plugins
-    'react-x': reactX,
-    'react-dom': reactDom,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended typescript rules
-    ...reactX.configs['recommended-typescript'].rules,
-    ...reactDom.configs.recommended.rules,
-  },
-})
-```
+## Dev Setup
+
+```bash
+# Clone & setup
+git clone https://github.com/TejaVooh/gistify.git
+cd gistify
+npm install
+
+# Run locally
+npm run dev
